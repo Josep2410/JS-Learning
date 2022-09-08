@@ -1,12 +1,20 @@
-// const = a variable that can't be changed
 
-const PI = 3.14159;
-let radius;
-let circumference;
+// Math =  an intrinsic object that provides basic mathematics functionality and constants
 
-radius = window.prompt("enter the radius of a circle");
-radius = Number(radius);
+let x = 3.14;
+let y = 5;
+let z = 9;
+let maximum;
+let minimum;
 
-circumference = 2 * PI * radius;
+//x = Math.round(x);
+//x = Math.floor(x);
+//x = Math.ceil(x);
+//x = Math.pow(x, 2);
+//x = Math.sqrt(x);
+//x = Math.abs(x);
+//maximum = Math.max(x, y, z);
+//minimum = Math.min(x, y, z);
+//x = Math.PI;
 
-console.log("The circumference is:", circumference);
+console.log(x);
