@@ -1,16 +1,21 @@
-// Two ways to take user input, using only JS or JS and HTML
+
+let age = window.prompt("How old are you?");
+console.log(typeof age);
+age = Number(age);
+console.log(typeof age);
+age +=1;
+
+console.log("Happy Birthday! You are", age, "years old");
 
 
-/*
-let userInput = window.prompt("What's your name?");
-console.log(userInput);
-*/
+let x;
+let y; 
+let z;
 
+x = Number("3.14");
+y = String(3.14);
+z = Boolean("pizza");
 
-let username;
-
-document.getElementById("myButton").onclick = function(){
-  username = document.getElementById('myText').value;
-  console.log(username);
-  document.getElementById("myLabel").innerHTML=username;
-}
+console.log(x, typeof x);
+console.log(y, typeof y);
+console.log(z, typeof z);
