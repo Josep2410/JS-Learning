@@ -1,21 +1,12 @@
+// const = a variable that can't be changed
 
-let age = window.prompt("How old are you?");
-console.log(typeof age);
-age = Number(age);
-console.log(typeof age);
-age +=1;
+const PI = 3.14159;
+let radius;
+let circumference;
 
-console.log("Happy Birthday! You are", age, "years old");
+radius = window.prompt("enter the radius of a circle");
+radius = Number(radius);
 
+circumference = 2 * PI * radius;
 
-let x;
-let y; 
-let z;
-
-x = Number("3.14");
-y = String(3.14);
-z = Boolean("pizza");
-
-console.log(x, typeof x);
-console.log(y, typeof y);
-console.log(z, typeof z);
+console.log("The circumference is:", circumference);
