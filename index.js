@@ -1,14 +1,16 @@
-let x;
-let y;
-let z;
+// useful string properties & methods
 
-document.getElementById("rollbutton").onclick = function(){
+let userName = "Bro Code";
+let phoneNumber = "123-456-7890";
 
-    x = Math.floor(Math.random() * 6) + 1;
-    y = Math.floor(Math.random() * 6) + 1;
-    z = Math.floor(Math.random() * 6) + 1;
+//console.log(userName.length);
+//console.log(userName.charAt(0));
+//console.log(userName.indexOf("o"));
+//console.log(userName.lastIndexOf("o"));
+//userName = userName.trim();
+//userName = userName.toUpperCase();
+//userName = userName.toLowerCase();
 
-    document.getElementById("xlabel").innerHTML = x;
-    document.getElementById("ylabel").innerHTML = y;
-    document.getElementById("zlabel").innerHTML = z;
-}
+phoneNumber = phoneNumber.replaceAll("-", "");
+
+console.log(phoneNumber);
