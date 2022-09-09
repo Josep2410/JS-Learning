@@ -1,20 +1,28 @@
 
-// Math =  an intrinsic object that provides basic mathematics functionality and constants
+let a;
+let b;
+let c;
 
-let x = 3.14;
-let y = 5;
-let z = 9;
-let maximum;
-let minimum;
+/*
+a = window.prompt("Enter side A");
+a = Number(a);
 
-//x = Math.round(x);
-//x = Math.floor(x);
-//x = Math.ceil(x);
-//x = Math.pow(x, 2);
-//x = Math.sqrt(x);
-//x = Math.abs(x);
-//maximum = Math.max(x, y, z);
-//minimum = Math.min(x, y, z);
-//x = Math.PI;
+b = window.prompt("Enter side B");
+b = Number(b);
 
-console.log(x);
+c = Math.sqrt(Math.pow(a,2) +  Math.pow(b,2));
+
+console.log("Side C:", c);
+*/
+
+document.getElementById("submitButton").onclick = function(){
+a = document.getElementById("aTextbox").value;
+a = Number(a);
+
+b = document.getElementById("bTextbox").value;
+b = Number(b);
+
+c = Math.sqrt(Math.pow(a,2) +  Math.pow(b,2));
+
+document.getElementById("cLabel").innerHTML = "Side C: " + c;
+}
