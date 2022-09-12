@@ -1,27 +1,23 @@
-document.getElementById("myButton").onclick = function(){
+// Template literals = delimited with (`)
+//                                   instead of double or single quotes
+//                                   allows embedded variables and expressions
 
-  const myCheckBox = document.getElementById("myCheckBox");
-  const visaBtn = document.getElementById("visaBtn");
-  const mastercardBtn = document.getElementById("mastercardBtn");
-  const paypalBtn = document.getElementById("paypalBtn");
+let userName = "Bro";
+let items = 3;
+let total = 75;
 
-  if(myCheckBox.checked){
-    console.log("You are subscribed!");
-  }
-  else{
-    console.log("You are NOT subscribed!");
-  }
+//console.log("Hello", userName);
+//console.log("You have", items, "items in your cart");
+//console.log("Your total is $", total);
 
-  if(visaBtn.checked){
-    console.log("You are paying with a Visa!");
-  }
-  else if(mastercardBtn.checked){
-    console.log("You are paying with a Mastercard!");
-  }
-  else if(paypalBtn.checked){
-    console.log("You are paying with PayPal!");
-  }
-  else{
-    console.log("You must select a payment type!");
-  }
-}
+//console.log(`Hello ${userName}`);
+//console.log(`You have ${items} items in your cart`);
+//console.log(`Your total is $${total}`);
+
+let text = 
+`Hello ${userName}<br>
+You have ${items} items in your cart<br>
+Your total is $${total}<br>`;
+
+//console.log(text);
+document.getElementById("myLabel").innerHTML = text;
