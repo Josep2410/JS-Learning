@@ -1,23 +1,18 @@
-// Template literals = delimited with (`)
-//                                   instead of double or single quotes
-//                                   allows embedded variables and expressions
+const answer = Math.floor(Math.random() * 10 + 1);
+let guesses = 0;
 
-let userName = "Bro";
-let items = 3;
-let total = 75;
+document.getElementById("submitButton").onclick = function(){
+  let guess = document.getElementById("guessField").value;
+  guesses+=1;
 
-//console.log("Hello", userName);
-//console.log("You have", items, "items in your cart");
-//console.log("Your total is $", total);
+  if(guess == answer){
+    alert(` ${answer} is the #. It took you ${guesses} guesses`);
+  }
 
-//console.log(`Hello ${userName}`);
-//console.log(`You have ${items} items in your cart`);
-//console.log(`Your total is $${total}`);
-
-let text = 
-`Hello ${userName}<br>
-You have ${items} items in your cart<br>
-Your total is $${total}<br>`;
-
-//console.log(text);
-document.getElementById("myLabel").innerHTML = text;
+  else if(guess < answer){
+    alert("Too small!");
+  }
+  else{
+    alert("Too large!");
+  }
+}
