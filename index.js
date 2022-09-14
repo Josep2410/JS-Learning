@@ -1,28 +1,7 @@
-document.getElementById("submitButton").onclick = function(){
+// 2D array = An array of arrays
 
-  let temp;
+let fruits = ['apples', 'oranges', 'bananas'];
+let vegetables = ["carrots", "onions", "potatoes"];
+let meats =         ["eggs", "chicken", "fish"];
 
-  if(document.getElementById("cButton").checked){
-      temp = document.getElementById("textBox").value;
-      temp = Number(temp);
-      temp = toCelsius(temp);
-      document.getElementById("tempLabel").innerHTML = temp + "°C";
-  }
-  else if(document.getElementById("fButton").checked){
-      temp = document.getElementById("textBox").value;
-      temp = Number(temp);
-      temp = toFahrenheit(temp);
-      document.getElementById("tempLabel").innerHTML = temp + "°F";
-  }
-  else{
-      document.getElementById("tempLabel").innerHTML = "Select a unit";
-  }
-}
-
-function toCelsius(temp){
-  return (temp - 32) * (5/9);
-}
-
-function toFahrenheit(temp){
-  return temp * 9 / 5 + 32;
-}
+let groceryList = [fruits, vegetables, meats]
