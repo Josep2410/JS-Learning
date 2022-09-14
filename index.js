@@ -1,19 +1,24 @@
-// rest parameters = represents an indefinite number
-// ...                             of parameters
-//                                (packs arguments into an array)
+// callback = a function passed as an argument
+//                    to another function.
+ 
+//    Ensures that a function is not going
+//    to run before a task is completed.
+//    Helps us develop asynchronous code.
+//    (When one function has to wait for another function)
+//    that helps us avoid errors and potential problems
+//    Ex. Wait for a file to load
 
-let a = 1;
-let b = 2;
-let c = 3;
-let d = 4;
-let e = 5;
+sum(2, 3, displayDOM);
 
-console.log(sum(a, b, c, d, e));
+function sum(x, y, callBack){
+  let result = x + y;
+  callBack(result);
+}
 
-function sum(...numbers){
-    let total = 0;
-    for(let number of numbers){
-        total += number
-    }
-    return total
+function displayConsole(output){
+  console.log(output);
+}
+
+function displayDOM(output){
+  document.getElementById("myLabel").innerHTML = output;
 }
