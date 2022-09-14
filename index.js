@@ -1,24 +1,17 @@
-// callback = a function passed as an argument
-//                    to another function.
- 
-//    Ensures that a function is not going
-//    to run before a task is completed.
-//    Helps us develop asynchronous code.
-//    (When one function has to wait for another function)
-//    that helps us avoid errors and potential problems
-//    Ex. Wait for a file to load
-
-sum(2, 3, displayDOM);
-
-function sum(x, y, callBack){
-  let result = x + y;
-  callBack(result);
+document.getElementById("multiply").onclick = function(){
+  let product;
+  firstInput = Number(document.getElementById("firstInput").value);
+  secondInput = Number(document.getElementById("secondInput").value);
+  product = ( firstInput* secondInput);
+  document.getElementById("resultDisplay").innerHTML = product;
 }
 
-function displayConsole(output){
-  console.log(output);
+document.getElementById("divide").onclick = function(){
+  let answer;
+  firstInput = Number(document.getElementById("firstInput").value);
+  secondInput = Number(document.getElementById("secondInput").value);
+  answer = ( firstInput / secondInput);
+  document.getElementById("resultDisplay").innerHTML = answer;
 }
+  
 
-function displayDOM(output){
-  document.getElementById("myLabel").innerHTML = output;
-}
