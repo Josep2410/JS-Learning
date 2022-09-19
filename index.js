@@ -1,43 +1,66 @@
-// Map = object that holds key-value pairs of any data type
+// object = A group of properties and methods
+//                properties = what an object has
+//                methods = what an object can do
+//                use . to access properties/methods
 
-const store = new Map([
-  ["t-shirt", 20],
-  ["jeans", 30],
-  ["socks", 10],
-  ["underwear", 50]
-]);
+const car1 = {
+  model:"Mustang",
+  color:"red",
+  year:2023,
 
-//store.get("t-shirt");
-//store.set("hat", 40);
-//store.delete("hat");
-//console.log(store.has("underwear"));
-//console.log(store.size);
+  drive : function(){
+      console.log("You drive the car");
+  },
+  brake : function(){
+      console.log("You step on the brakes");
+  }
+}
+const car2 = {
+  model:"Corvette",
+  color:"blue",
+  year:2024,
 
-let shoppingCart = 0 ;
-shoppingCart += store.get("t-shirt");
-console.log(`$${shoppingCart}`);
-
-store.forEach((value, key) => console.log(`${key} $${value}`));
-
-console.log("=======================================================");
-
-const pantry = new Map([
-["spagetti", true],
-["sauce", false],
-["bread", false],
-["chopped meat", true],
-]);
-
-//pantry.set("sauce", true); can overwrite existing values
-
-pantry.forEach((value, key) => console.log(`${key} ${value}`));
-
-let expiredGoods = 0;
-for( [value, key] of pantry){
-  if(key == false){
-    expiredGoods++;
+  drive : function(){
+      console.log("You drive the car");
+  },
+  brake : function(){
+      console.log("You step on the brakes");
   }
 }
 
-console.log(`Number of expired goods: ${expiredGoods}`);
+console.log(car1.model);
+console.log(car1.color);
+console.log(car1.year);
+car1.drive();
+car1.brake();
 
+console.log(car2.model);
+console.log(car2.color);
+console.log(car2.year);
+car2.drive();
+car2.brake();
+
+
+const person1 = {
+  name:"Billy", 
+  age: 23,
+  gender: "boy", 
+
+  introduction : function(){
+    console.log(`Hello, my name is ${person1.name} and I am ${person1.age} years old`);
+  }
+
+}
+
+const person2 = {
+  name:"Erica", 
+  age: 26,
+  gender: "girl", 
+  introduction : function(){
+    console.log(`Hello, my name is ${person2.name} and I am ${person2.age} years old`);
+  }
+}
+
+console.log(person2.name);
+person1.introduction();
+person2.introduction();
