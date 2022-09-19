@@ -1,41 +1,22 @@
-// arrow function expression = compact alternative to a traditional function expression
-//      =>
+let cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
-const grades = [100, 50, 90, 60, 80, 70];
+shuffle(cards);
 
-grades.sort((x, y) => y - x);
-grades.forEach((element) => console.log(element));
+console.log(cards);
+//console.log(cards[0]);
+//cards.forEach(card => console.log(card));
 
-const word = 'a million dollars';
-let message = "whats up didily doers";
+function shuffle(array){
+  let currentIndex = array.length;
+ 
+  while(currentIndex != 0){
+    let randomIndex = Math.floor(Math.random() * array.length);
+    currentIndex-=1;
 
-//TRADITIONAL function
-/* function greeting (message){
-  console.log(message);
-} */
-
-//FUNCTION expression
-/* const greeting = function(message){
-  console.log(message);
-} */
-
-//arrow function expression
-const greeting = message => {
-  console.log(`${word} finally`);
-}
-greeting(message);
-
-
-//combining rest parameters and function expressions
-
- const multiply = function(...multiplicands){
-  let product = 1 ;
-  for(let item of multiplicands){
-    product*=item;
+    let temp = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temp;
   }
-  return product;
+  
+  return array;
 }
-
-console.log(multiply( 2 , 10 , 14 ));
-
-
