@@ -21,8 +21,10 @@ function login(){
 }
 
 //things to remember:
-/* global variable is used. thats how each inner function can access the userName
-and userInbox variable
-You have to call a function in order to use it. Simply wrting out the function
-will not invoke the function => call it
+/* 
+- global variable is used. thats how each inner function can access the userName
+   and userInbox variable
+- You have to call a function in order to use it. Simply wrting out the function
+   will not invoke the function => call it.
+- Using nested functions add a bit of security.
  */
