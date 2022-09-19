@@ -1,7 +1,5 @@
-// object = A group of properties and methods
-//                properties = what an object has
-//                methods = what an object can do
-//                use . to access properties/methods
+// this = reference to a particular object
+//           the object depends on the immediate context
 
 const car1 = {
   model:"Mustang",
@@ -9,7 +7,7 @@ const car1 = {
   year:2023,
 
   drive : function(){
-      console.log("You drive the car");
+      console.log(`You drive a ${this.model} `);
   },
   brake : function(){
       console.log("You step on the brakes");
@@ -47,7 +45,7 @@ const person1 = {
   gender: "boy", 
 
   introduction : function(){
-    console.log(`Hello, my name is ${person1.name} and I am ${person1.age} years old`);
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old`);
   }
 
 }
