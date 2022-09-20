@@ -1,64 +1,54 @@
-// this = reference to a particular object
-//           the object depends on the immediate context
+// class = a blueprint for creating objects
+//              define what properties and methods they have
+//              use a constructor for unique properties
 
-const car1 = {
-  model:"Mustang",
-  color:"red",
-  year:2023,
+class Player{
 
-  drive : function(){
-      console.log(`You drive a ${this.model} `);
-  },
-  brake : function(){
-      console.log("You step on the brakes");
+  score = 0;
+
+  pause(){
+      console.log("You paused the game");
   }
-}
-const car2 = {
-  model:"Corvette",
-  color:"blue",
-  year:2024,
-
-  drive : function(){
-      console.log("You drive the car");
-  },
-  brake : function(){
-      console.log("You step on the brakes");
+  exit(){
+      console.log("You exited the game");
   }
 }
 
-console.log(car1.model);
-console.log(car1.color);
-console.log(car1.year);
-car1.drive();
-car1.brake();
+const player1 = new Player();
+const player2 = new Player();
+const player3 = new Player();
+const player4 = new Player();
 
-console.log(car2.model);
-console.log(car2.color);
-console.log(car2.year);
-car2.drive();
-car2.brake();
+player1.score += 1;
 
+console.log(player1.score);
+console.log(player2.score);
 
-const person1 = {
-  name:"Billy", 
-  age: 23,
-  gender: "boy", 
+player1.pause();
+player2.exit();
 
-  introduction : function(){
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old`);
+console.log("============BREAK===========")
+
+class Human{
+  name;
+  gender;
+  age;
+  eyeColor;
+  
+  talk(){
+    console.log("Hello.");
   }
 
+ 
 }
 
-const person2 = {
-  name:"Erica", 
-  age: 26,
-  gender: "girl", 
-  introduction : function(){
-    console.log(`Hello, my name is ${person2.name} and I am ${person2.age} years old`);
-  }
-}
+const jane = new Human();
 
-console.log(person2.name);
-person1.introduction();
-person2.introduction();
+jane.name = 'jane';
+jane.gender = 'female';
+jane.age = 20;
+jane.eyeColor = 'brown';
+
+console.log(jane);
+jane.talk();
+
