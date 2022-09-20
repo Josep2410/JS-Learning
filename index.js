@@ -2,38 +2,47 @@
 //              define what properties and methods they have
 //              use a constructor for unique properties
 
-class Player{
+// constructor = a special method of a class,
+//                          accepts arguments and assigns properties
 
-  score = 0;
+class Student{
 
-  pause(){
-      console.log("You paused the game");
+  constructor(name, age, gpa){
+      this.name = name;
+      this.age = age;
+      this.gpa = gpa;
   }
-  exit(){
-      console.log("You exited the game");
+  study(){
+      console.log(`${this.name} is studying`);
   }
 }
 
-const player1 = new Player();
-const player2 = new Player();
-const player3 = new Player();
-const player4 = new Player();
+const student1 = new Student("Spongebob", 30, 3.2);
+const student2 = new Student("Patrick", 35, 1.5);
+const student3 = new Student("Sandy", 27, 4.0);
 
-player1.score += 1;
+console.log(student1.name);
+console.log(student1.age);
+console.log(student1.gpa);
+student1.study();
 
-console.log(player1.score);
-console.log(player2.score);
+console.log(student2.name);
+console.log(student2.age);
+console.log(student2.gpa);
+student2.study();
 
-player1.pause();
-player2.exit();
-
-console.log("============BREAK===========")
+console.log(student3.name);
+console.log(student3.age);
+console.log(student3.gpa);
+student3.study();
 
 class Human{
-  name;
-  gender;
-  age;
-  eyeColor;
+
+  constructor(name, gender, age){
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
+  }
   
   talk(){
     console.log("Hello.");
@@ -42,13 +51,12 @@ class Human{
  
 }
 
-const jane = new Human();
+const human1 = new Human('jane', 'female', 24);
+const human2 = new Human ('Alex', 'male', 23);
+console.log(human1);
+console.log(human2.name);
 
-jane.name = 'jane';
-jane.gender = 'female';
-jane.age = 20;
-jane.eyeColor = 'brown';
 
-console.log(jane);
-jane.talk();
+
+
 
