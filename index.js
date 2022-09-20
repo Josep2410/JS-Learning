@@ -1,45 +1,93 @@
-// static = belongs to the class, not the objects
-//               properties: useful for caches, fixed-configuration
-//               methods:    useful for utility functions
+// inheritance = a child class can inherit all the 
+//                        methods and properties from another class
 
-class Car{
+class Animal{
 
-  static numberOfCars = 0;
+  alive = true;
 
-  constructor(model){
-      this.model = model;
-      Car.numberOfCars += 1;
+  eat(){
+      console.log(`This ${this.name} is eating`);
   }
-  static startRace(){
-      console.log("3...2...1...GO!");
+  sleep(){
+      console.log(`This ${this.name} is sleeping`);
   }
 }
 
-const car1 = new Car("Mustang");
-const car2 = new Car("Corvette");
-const car3 = new Car("BMW");
+class Rabbit extends Animal{
 
-console.log(Car.numberOfCars);
-Car.startRace();
+  name = "rabbit";
 
-//All Humans share one bank account. Mwahahaha
-class human {
-
-  static moneyInBank = 20;
-  
-  constructor(name, age){
-    this.name = name;
-    this.age = age;
-    human.moneyInBank-=2;
+  run(){
+      console.log(`This ${this.name} is running`);
   }
+}
+class Fish extends Animal{
 
-  static sleepBreak(){
-    console.log(`The humans are sleeping...`);
+  name = "fish";
+
+  swim(){
+      console.log(`This ${this.name} is swimming`);
   }
+}
+class Hawk extends Animal{
 
+  name = "hawk";
+
+  fly(){
+      console.log(`This ${this.name} is flying`);
+  }
 }
 
-const human1 = new human("Arthur", 52);
-const human2 = new human("Taylor", 32);
-console.log(`Money remaining: $${human.moneyInBank}`);
-human.sleepBreak();
+const rabbit = new Rabbit();
+const fish = new Fish();
+const hawk = new Hawk();
+
+console.log(rabbit.alive);
+rabbit.eat();
+rabbit.sleep();
+rabbit.run();
+
+
+class car{
+  company = 'Honda'
+
+  drive(){
+    console.log(`${this.company} ${this.model} goes: Vroom.`);
+  }
+
+  break(){
+    console.log(`${this.company} ${this.model} goes: Eikkk.`);
+  }
+  stats(){
+    console.log(`${this.company} ${this.model} ${this.horsePower} ${this.mpg}`)
+  }
+}
+
+class Civic extends car{
+  model = 'civic';
+  horsePower = 180;
+  mpg = 34;
+
+  sportsMode(){
+    console.log(`${this.company} ${this.model} : sports mode activated`);
+  }
+}
+
+class Accord extends car{
+  model = 'acoord';
+  horsePower = 150;
+  mpg = 38;
+  ecoFriendly(){
+    console.log(`${this.model} eco Friendly mode activated`);
+  }
+ 
+}
+
+const civic = new Civic();
+const accord = new Accord();
+
+civic.stats();
+civic.drive();
+civic.sportsMode();
+accord.break();
+accord.stats();
