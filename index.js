@@ -1,62 +1,45 @@
-// class = a blueprint for creating objects
-//              define what properties and methods they have
-//              use a constructor for unique properties
+// static = belongs to the class, not the objects
+//               properties: useful for caches, fixed-configuration
+//               methods:    useful for utility functions
 
-// constructor = a special method of a class,
-//                          accepts arguments and assigns properties
+class Car{
 
-class Student{
+  static numberOfCars = 0;
 
-  constructor(name, age, gpa){
-      this.name = name;
-      this.age = age;
-      this.gpa = gpa;
+  constructor(model){
+      this.model = model;
+      Car.numberOfCars += 1;
   }
-  study(){
-      console.log(`${this.name} is studying`);
+  static startRace(){
+      console.log("3...2...1...GO!");
   }
 }
 
-const student1 = new Student("Spongebob", 30, 3.2);
-const student2 = new Student("Patrick", 35, 1.5);
-const student3 = new Student("Sandy", 27, 4.0);
+const car1 = new Car("Mustang");
+const car2 = new Car("Corvette");
+const car3 = new Car("BMW");
 
-console.log(student1.name);
-console.log(student1.age);
-console.log(student1.gpa);
-student1.study();
+console.log(Car.numberOfCars);
+Car.startRace();
 
-console.log(student2.name);
-console.log(student2.age);
-console.log(student2.gpa);
-student2.study();
+//All Humans share one bank account. Mwahahaha
+class human {
 
-console.log(student3.name);
-console.log(student3.age);
-console.log(student3.gpa);
-student3.study();
-
-class Human{
-
-  constructor(name, gender, age){
-    this.name = name;
-    this.gender = gender;
-    this.age = age;
-  }
+  static moneyInBank = 20;
   
-  talk(){
-    console.log("Hello.");
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+    human.moneyInBank-=2;
   }
 
- 
+  static sleepBreak(){
+    console.log(`The humans are sleeping...`);
+  }
+
 }
 
-const human1 = new Human('jane', 'female', 24);
-const human2 = new Human ('Alex', 'male', 23);
-console.log(human1);
-console.log(human2.name);
-
-
-
-
-
+const human1 = new human("Arthur", 52);
+const human2 = new human("Taylor", 32);
+console.log(`Money remaining: $${human.moneyInBank}`);
+human.sleepBreak();
