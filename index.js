@@ -1,17 +1,20 @@
-class Card{
-  constructor(value, suit){
-      this.value = value;
-      this.suit = suit;
-  }
+// error = object with a description of 
+//             something that went wrong
+
+// throw = executes a user-defined error
+
+try{
+  let x = window.prompt("Enter a #");
+  x = Number(x);
+
+  if(isNaN(x)) throw "That wasn't a number!";
+  if(x == "") throw "That was empty!";
+
+  console.log(`${x} is a number`);
 }
-
-let cards = [new Card("A", "Hearts"), 
-           new Card("A", "Spades"), 
-           new Card("A", "Diamonds"), 
-           new Card("A", "Clubs"), 
-           new Card("2", "Hearts"), 
-           new Card("2", "Spades"), 
-           new Card("2", "Diamonds"), 
-           new Card("2", "Clubs")];
-
-cards.forEach(card => console.log(`${card.value} ${card.suit}`));
+catch(error){
+  console.log(error);
+}
+finally{
+  console.log("This always executes");
+}
