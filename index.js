@@ -1,20 +1,68 @@
-// error = object with a description of 
-//             something that went wrong
+// setTimeout() = invokes a function after a number of milliseconds            
+//                            asynchronous function (doesn't pause execution) 
 
-// throw = executes a user-defined error
+/* let item = "cryptocurrency";
+let price = 420.69;
 
-try{
-  let x = window.prompt("Enter a #");
-  x = Number(x);
+let timer1 = setTimeout(firstMessage, 3000, item, price);
+let timer2 = setTimeout(secondMessage, 6000);
+let timer3 = setTimeout(thirdMessage, 9000);
 
-  if(isNaN(x)) throw "That wasn't a number!";
-  if(x == "") throw "That was empty!";
-
-  console.log(`${x} is a number`);
+function firstMessage(item, price){
+    alert(`Buy this ${item} for $${price}`);
 }
-catch(error){
-  console.log(error);
+function secondMessage(){
+    alert(`This is not a scam!`);
 }
-finally{
-  console.log("This always executes");
+function thirdMessage(){
+    alert(`DO ITT!`);
+}
+document.getElementById("myButton").onclick = function(){
+    clearTimeout(timer1); 
+    clearTimeout(timer2);
+    clearTimeout(timer3);
+    alert(`Thanks for buying!`);
+}
+ */
+
+
+
+
+
+
+
+/* 
+   ================= Ad starter and stopper program ================
+ */
+
+   let price = 4.99
+document.getElementById("ad").onclick = function(){
+  let timer1 = firstMessage(price);
+  let timer2 = setTimeout(secondMessage, 2000);
+  let timer3 = setTimeout(thirdMessage, 6000);
+  let timer4 = setTimeout(fourthMessage, 10000);
+
+  document.getElementById("myButton").onclick = function(){
+    clearTimeout(timer1); 
+    clearTimeout(timer2);
+    clearTimeout(timer3);
+    clearTimeout(timer4);
+  }
+}
+
+function firstMessage(price){
+  alert(`Buy enlargement pills for $${price}`);
+}
+
+function secondMessage(){
+  alert(`Make your woman happy with this simple trick`);
+}
+
+function thirdMessage(){
+  alert(`Dont miss out`);
+
+}
+function fourthMessage(){
+  alert(`The industry does not want you to know this!`);
+  
 }
