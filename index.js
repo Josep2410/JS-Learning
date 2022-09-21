@@ -1,77 +1,63 @@
-// super = Refers to the parent class. 
-//               Commonly used to invoke constructor of a parent class
+// get = binds an object property to a function 
+//          when that property is accessed
+// set = binds an object property to a function
+//          when that property is assigned a value
 
-class Animal{
-    
-  constructor(name, age){
-      this.name = name;
-      this.age = age;
+class Car{
+  constructor(power){
+      this._gas = 25;
+      this._power = power;
   }
-}
-class Rabbit extends Animal{
-
-  constructor(name, age, runSpeed){
-      super(name, age);
-      this.runSpeed = runSpeed;
+  get power(){
+      return `${this._power}hp`;
   }
-}
-class Fish extends Animal{
-
-  constructor(name, age, swimSpeed){
-      super(name, age);
-      this.swimSpeed = swimSpeed;
+  get gas(){
+      return `${this._gas}L (${this._gas / 50 * 100}%)`;
   }
-}
-class Hawk extends Animal{
-
-  constructor(name, age, flySpeed){
-      super(name, age);
-      this.flySpeed = flySpeed;
+  set gas(value){
+      if(value > 50){
+          value = 50;
+      }
+      else if(value < 0){
+          value = 0;
+      }
+      this._gas = value;
   }
 }
 
-const rabbit = new Rabbit("rabbit", 1, 40);
-const fish = new Fish("fish", 2, 80);
-const hawk = new Hawk("hawk", 3, 200);
+let car = new Car(400);
 
-console.log(rabbit.name);
-console.log(rabbit.age);
-console.log(rabbit.runSpeed);
+/* car.gas = 100; */
 
-class Human{
-  constructor(age, name, ssn){
-    this.age = age;
-    this.name = name;
-    this.ssn = ssn;
+console.log(car.power);
+console.log(car.gas);
 
+class Phone {
+  constructor(price){
+    this._price = price;
+    this._battery = 100;
+  }
+  get price(){
+    return `$${this._price}`;
+  }
+
+  get battery(){
+      return `Your phone is at ${(this._battery / 8) *100}%`;
+  }
+
+  set battery(usage){
+    if(usage > 8)
+      usage = 8;
+    else if( usage < 0)
+      usage = 0;
+    this._battery = usage;
   }
 }
 
-class Boy extends Human{
-  constructor(age, name, ssn,genitals){
-    super(age, name, ssn);
-    this.genitals = genitals;
+const iphone8 = new Phone(400);
 
-  }
-}
+console.log(iphone8.price);
 
-class Girl extends Human{
-  constructor(age,name,ssn,genitals){
-    super(age, name, ssn);
-    this.genitals = genitals;
-    
-  }
-}
+iphone8.battery = 5;
 
-const boy = new Boy(24, "Paulo", 245, 'penis');
-const girl = new Girl(24, "Shinanay", 253, 'vagina');
-
-console.log(boy.age);
-console.log(boy.name);
-console.log(boy.ssn);
-console.log(boy.genitals);
-
-console.log(girl.age);
-console.log(girl.name);
-console.log(girl.ssn);
-console.log(girl.genitals);
+console.log(iphone8.battery);
