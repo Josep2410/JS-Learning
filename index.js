@@ -35,7 +35,7 @@ console.log(car.gas);
 class Phone {
   constructor(price){
     this._price = price;
-    this._battery = 100;
+    this._battery = 8;
   }
   get price(){
     return `$${this._price}`;
@@ -54,10 +54,13 @@ class Phone {
   }
 }
 
+let userInput = window.prompt("How long have you used your phone today? ENTER in units of hours: ");
+userInput = Number(userInput);
+
 const iphone8 = new Phone(400);
 
-console.log(iphone8.price);
+iphone8.battery = userInput;
 
-iphone8.battery = 5;
+console.log(iphone8.price);
 
 console.log(iphone8.battery);
