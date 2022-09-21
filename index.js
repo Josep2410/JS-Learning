@@ -1,93 +1,77 @@
-// inheritance = a child class can inherit all the 
-//                        methods and properties from another class
+// super = Refers to the parent class. 
+//               Commonly used to invoke constructor of a parent class
 
 class Animal{
-
-  alive = true;
-
-  eat(){
-      console.log(`This ${this.name} is eating`);
-  }
-  sleep(){
-      console.log(`This ${this.name} is sleeping`);
+    
+  constructor(name, age){
+      this.name = name;
+      this.age = age;
   }
 }
-
 class Rabbit extends Animal{
 
-  name = "rabbit";
-
-  run(){
-      console.log(`This ${this.name} is running`);
+  constructor(name, age, runSpeed){
+      super(name, age);
+      this.runSpeed = runSpeed;
   }
 }
 class Fish extends Animal{
 
-  name = "fish";
-
-  swim(){
-      console.log(`This ${this.name} is swimming`);
+  constructor(name, age, swimSpeed){
+      super(name, age);
+      this.swimSpeed = swimSpeed;
   }
 }
 class Hawk extends Animal{
 
-  name = "hawk";
-
-  fly(){
-      console.log(`This ${this.name} is flying`);
+  constructor(name, age, flySpeed){
+      super(name, age);
+      this.flySpeed = flySpeed;
   }
 }
 
-const rabbit = new Rabbit();
-const fish = new Fish();
-const hawk = new Hawk();
+const rabbit = new Rabbit("rabbit", 1, 40);
+const fish = new Fish("fish", 2, 80);
+const hawk = new Hawk("hawk", 3, 200);
 
-console.log(rabbit.alive);
-rabbit.eat();
-rabbit.sleep();
-rabbit.run();
+console.log(rabbit.name);
+console.log(rabbit.age);
+console.log(rabbit.runSpeed);
 
+class Human{
+  constructor(age, name, ssn){
+    this.age = age;
+    this.name = name;
+    this.ssn = ssn;
 
-class car{
-  company = 'Honda'
-
-  drive(){
-    console.log(`${this.company} ${this.model} goes: Vroom.`);
-  }
-
-  break(){
-    console.log(`${this.company} ${this.model} goes: Eikkk.`);
-  }
-  stats(){
-    console.log(`${this.company} ${this.model} ${this.horsePower} ${this.mpg}`)
   }
 }
 
-class Civic extends car{
-  model = 'civic';
-  horsePower = 180;
-  mpg = 34;
+class Boy extends Human{
+  constructor(age, name, ssn,genitals){
+    super(age, name, ssn);
+    this.genitals = genitals;
 
-  sportsMode(){
-    console.log(`${this.company} ${this.model} : sports mode activated`);
   }
 }
 
-class Accord extends car{
-  model = 'acoord';
-  horsePower = 150;
-  mpg = 38;
-  ecoFriendly(){
-    console.log(`${this.model} eco Friendly mode activated`);
+class Girl extends Human{
+  constructor(age,name,ssn,genitals){
+    super(age, name, ssn);
+    this.genitals = genitals;
+    
   }
- 
 }
 
-const civic = new Civic();
-const accord = new Accord();
+const boy = new Boy(24, "Paulo", 245, 'penis');
+const girl = new Girl(24, "Shinanay", 253, 'vagina');
 
-civic.stats();
-civic.drive();
-civic.sportsMode();
-accord.break();
-accord.stats();
+console.log(boy.age);
+console.log(boy.name);
+console.log(boy.ssn);
+console.log(boy.genitals);
+
+console.log(girl.age);
+console.log(girl.name);
+console.log(girl.ssn);
+console.log(girl.genitals);
