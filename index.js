@@ -1,33 +1,15 @@
 
-let element = document.getElementById("myTitle");
-element.style.backgroundColor = "lightgreen";
+// add/change HTML elements
+// .innerHTML (vulnerable to XSS attacks)
+// .textContent (more secure)
 
+const nameTag = document.createElement("h1");
+nameTag.textContent = "Bro";
+document.body.append(nameTag);
 
-let fruits = document.getElementsByName("fruits");
-fruits.forEach(fruit => {
-    if(fruit.checked){
-        console.log(fruit.value);
-    }
-})
-
-
-let vegetables = document.getElementsByTagName("li");
-vegetables[0].style.backgroundColor = "lightgreen";
-
-
-let desserts = document.getElementsByClassName("desserts");
-desserts[0].style.backgroundColor = "lightgreen";
-
-
-//selects first item type of querySelector. to target multiple use 'querySelectorAll'
-let tag = document.querySelector("[for]");
-element.style.backgroundColor = "lightgreen";
-/* queryselector("#id")
-queryselector(".classname")
-queryselector("tagename") */
-
-
-let elements = document.querySelectorAll("[for]");
-elements.forEach(element => {
-    element.style.backgroundColor = "lightgreen";
-})
+//const myList = document.querySelector("#fruit");
+//const listItem = document.createElement("li");
+//listItem.textContent = "mango";
+//myList.append(listItem);
+//myList.prepend(listItem);
+//myList.insertBefore(listItem, myList.getElementsByTagName("li")[1]);
