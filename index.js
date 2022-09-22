@@ -1,11 +1,33 @@
-// ********************** index.js **********************
-//import {PI, getCircumference, getArea} from "./math_util.js";
-import * as MathUtil from "./math_util.js";
 
-console.log(MathUtil.PI);
+let element = document.getElementById("myTitle");
+element.style.backgroundColor = "lightgreen";
 
-let circumference = MathUtil.getCircumference(10);
-console.log(circumference);
 
-let area = MathUtil.getArea(10);
-console.log(area);
+let fruits = document.getElementsByName("fruits");
+fruits.forEach(fruit => {
+    if(fruit.checked){
+        console.log(fruit.value);
+    }
+})
+
+
+let vegetables = document.getElementsByTagName("li");
+vegetables[0].style.backgroundColor = "lightgreen";
+
+
+let desserts = document.getElementsByClassName("desserts");
+desserts[0].style.backgroundColor = "lightgreen";
+
+
+//selects first item type of querySelector. to target multiple use 'querySelectorAll'
+let tag = document.querySelector("[for]");
+element.style.backgroundColor = "lightgreen";
+/* queryselector("#id")
+queryselector(".classname")
+queryselector("tagename") */
+
+
+let elements = document.querySelectorAll("[for]");
+elements.forEach(element => {
+    element.style.backgroundColor = "lightgreen";
+})
