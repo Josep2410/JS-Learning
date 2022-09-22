@@ -1,15 +1,28 @@
-// setInterval() = invokes a function repeatedly after no. of milliseconds
-//                          asynchronous function (doesn't pause execution) 
+// The Date object is used to work with dates & times
 
-let count = 0;
-let max = window.prompt("Count up to what #?");
-max = Number(max);
-const myTimer = setInterval(countUp, 1000);
+let date = new Date();
+//let date = new Date(0);
+//let date = new Date(2023, 0, 1, 2, 3, 4, 5);
+//let date = new Date("January 1, 2023 00:00:00");
+/*
+let year = date.getFullYear();
+let dayOfMonth = date.getDate();
+let dayOfWeek = date.getDay();
+let month = date.getMonth();
+let hour = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
+let ms = date.getMilliseconds();
+/
+/
+date.setFullYear(2024);
+date.setMonth(11);
+date.setDate(31);
+date.setHours(23);
+date.setMinutes(1);
+date.setSeconds(30);
+date.setMilliseconds(0);
+*/
 
-function countUp(){
-    count+=1;
-    console.log(count);
-    if(count >= max){
-        clearInterval(myTimer);
-    }
-}
+date = date.toLocaleString();
+document.getElementById("myLabel").innerHTML = date
