@@ -1,29 +1,11 @@
-const myLabel = document.getElementById("myLabel");
+// ********************** index.js **********************
+//import {PI, getCircumference, getArea} from "./math_util.js";
+import * as MathUtil from "./math_util.js";
 
-update();
-setInterval(update, 1000);
+console.log(MathUtil.PI);
 
-function update(){
+let circumference = MathUtil.getCircumference(10);
+console.log(circumference);
 
-    let date = new Date();
-    myLabel.innerHTML = formatTime(date);
-
-    function formatTime(date){
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let seconds = date.getSeconds();
-        let amOrPm = hours >= 12 ? "pm" : "am";
-
-        hours = (hours % 12) || 12;
-
-        hours = formatZeroes(hours);
-        minutes = formatZeroes(minutes);
-        seconds = formatZeroes(seconds);
-
-        return `${hours}:${minutes}:${seconds} ${amOrPm}`;
-    }
-    function formatZeroes(time){
-        time = time.toString();
-        return time.length < 2 ? "0" + time : time;
-    }
-}
+let area = MathUtil.getArea(10);
+console.log(area);
