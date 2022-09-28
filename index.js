@@ -1,14 +1,21 @@
-// .addEventListener(event, function, useCapture)
-// You can add many event handlers to one element.
-// Even the same event that invokes different functions
+const myButton = document.querySelector("#myButton");
+const myImg = document.querySelector("#myImg");
 
-const innerDiv = document.getElementById("innerDiv");
-const outerDiv = document.getElementById("outerDiv");
+myButton.addEventListener("click", () => {
 
-innerDiv.addEventListener("click", changeBlue);
-outerDiv.addEventListener("click", changeBlue, true);
+  /*   if(myImg.style.visibility == "hidden"){
+        myImg.style.visibility = "visible";
+    }
+    else{
+        myImg.style.visibility = "hidden";
+    } */
 
-function changeBlue(){
-    alert(`You selected ${this.id}`);
-    this.style.backgroundColor = "lightblue"
-}
+ // Two ways of hiding/displaying using either visibility OR display
+
+  if(myImg.style.display == "none"){
+      myImg.style.display = "block";
+  }
+  else{
+      myImg.style.display = "none";
+  }
+})
