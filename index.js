@@ -1,21 +1,14 @@
-//const element = document.getElementById("myButton");
-//const element = document.body;
-//const element = document.getElementById("myText");
-const element = document.getElementById("myDiv");
+// .addEventListener(event, function, useCapture)
+// You can add many event handlers to one element.
+// Even the same event that invokes different functions
 
-//element.onclick = doSomething;
-//element.onload = doSomething;
-//element.onchange = doSomething;
-//element.onmouseover = doSomething;
-//element.onmouseout = doSomethingElse;
-element.onmousedown = doSomething;
-element.onmouseup = doSomethingElse;
+const innerDiv = document.getElementById("innerDiv");
+const outerDiv = document.getElementById("outerDiv");
 
-function doSomething(){
-    //alert("You did something!");
-    element.style.backgroundColor = "red";
-}
-function doSomethingElse(){
-    //alert("You did something!");
-    element.style.backgroundColor = "lightgreen";
+innerDiv.addEventListener("click", changeBlue);
+outerDiv.addEventListener("click", changeBlue, true);
+
+function changeBlue(){
+    alert(`You selected ${this.id}`);
+    this.style.backgroundColor = "lightblue"
 }
