@@ -1,7 +1,21 @@
-const title = document.getElementById("myTitle");
+//const element = document.getElementById("myButton");
+//const element = document.body;
+//const element = document.getElementById("myText");
+const element = document.getElementById("myDiv");
 
-title.style.backgroundColor = "#222222";
-title.style.color = "rgb(50, 200, 250)";
-title.style.fontFamily = "consolas";
-title.style.textAlign = "center";
-title.style.border = "2px solid";
+//element.onclick = doSomething;
+//element.onload = doSomething;
+//element.onchange = doSomething;
+//element.onmouseover = doSomething;
+//element.onmouseout = doSomethingElse;
+element.onmousedown = doSomething;
+element.onmouseup = doSomethingElse;
+
+function doSomething(){
+    //alert("You did something!");
+    element.style.backgroundColor = "red";
+}
+function doSomethingElse(){
+    //alert("You did something!");
+    element.style.backgroundColor = "lightgreen";
+}
