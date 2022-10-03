@@ -1,0 +1,46 @@
+div{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  display:block;
+}
+.flashButton{
+  position: absolute;
+  top:40%;
+  left:45%;
+}
+
+.stopButton{
+  position: absolute;
+  top:43%;
+  left:46%;
+  
+}
+
+.div1{
+  background-color: red;
+  top:10px;
+  left:10px;
+  
+}
+
+.div2{
+  background-color: yellow;
+  top:10px;
+  right:10px;
+  
+}
+
+.div3{
+  bottom:10px;
+  left:10px;
+  background-color: rgb(3, 153, 3);
+}
+
+.div4{
+  bottom:10px;
+  right:10px;
+  background-color: rgb(3, 26, 153);
+}
+
+
