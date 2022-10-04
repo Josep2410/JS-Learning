@@ -13,7 +13,8 @@ function flash(){
      allDivs.forEach(setDisplayOn);
     }
     else{
-      allDivs.forEach(setDisplayOff);
+      allDivs.forEach((item, index, array)=>{
+        item.style.display = "none"});
     }
   }
 
@@ -30,7 +31,4 @@ function setDisplayOn(item, index, array){
   item.style.display = "block";
 }
 
-function setDisplayOff(item, index, array){
-  item.style.display = "none";
-}
 
