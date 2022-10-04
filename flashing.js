@@ -1,10 +1,57 @@
 const flashing = document.querySelector(".flashButton");
 
 const div1 = document.querySelector(".div1");
+const div2 = document.querySelector(".div2");
+const div3 = document.querySelector(".div3");
+const div4 = document.querySelector(".div4");
 const allDivs = document.querySelectorAll("div");
 const stop = document.querySelector(".stopButton");
+const restart = document.querySelector(".restartButton");
 
-flashing.addEventListener("click", flash);
+let w = 0;  
+
+//flashing.addEventListener("click", flash);
+flashing.addEventListener("click", slideDownwards);
+
+function slideDownwards(){
+ 
+  timer = setInterval(slideDown, 5);
+ 
+  
+  function slideDown(){
+
+    if(w > 670){
+      clearInterval(timer);
+
+    }
+    else{
+      w+=1;
+      div1.style.top = w + 'px';
+      div2.style.top = w + 'px';
+      div3.style.bottom = w + 'px';
+      div4.style.bottom = w + 'px';
+    }
+ 
+    stop.addEventListener("click", ()=>{
+      flashing.innerHTML = 'Resume';
+      clearInterval(timer);
+    });
+
+    restart.addEventListener("click",()=>{
+      w = 0;
+
+      //reset positions
+      div1.style.top = w + 'px';
+      div2.style.top = w + 'px';
+      div3.style.bottom = w + 'px';
+      div4.style.bottom = w + 'px';
+    })
+
+    }
+
+  
+
+}
 
 function flash(){
   const party = setInterval(flashparty, 100);
@@ -24,11 +71,13 @@ function flash(){
   })
 
 
+  function setDisplayOn(item, index, array){
+    item.style.display = "block";
+  }
 }
 
 
-function setDisplayOn(item, index, array){
-  item.style.display = "block";
-}
+
+
 
 
