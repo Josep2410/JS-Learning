@@ -4,23 +4,33 @@ div{
   position: absolute;
   display:block;
 }
+
 .flashButton{
   position: absolute;
   top:40%;
-  left:46%;
+  left:40%;
 }
+
+
 
 .stopButton{
   position: absolute;
-  top:43%;
-  left:46%;
-  width:59px;
+  top:40%;
+  left:45%;
 }
 
 .restartButton{
   position: absolute;
-  top:46%;
-  left:46%;
+  top:40%;
+  left:50%;
+}
+
+img{
+  width:50px;
+  border-radius: 50%;
+}
+img:hover{
+  cursor: pointer;
 }
 
 .div1{

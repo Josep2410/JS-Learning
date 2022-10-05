@@ -33,7 +33,7 @@ function slideDownwards(){
     }
  
     stop.addEventListener("click", ()=>{
-      flashing.innerHTML = 'Resume';
+     
       clearInterval(timer);
     });
 
