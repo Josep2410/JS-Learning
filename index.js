@@ -1,60 +1,65 @@
-const myButton = document.getElementById("myButton");
-const myAnimation = document.getElementById("myDiv");
+let canvas = document.getElementById("myCanvas");
+let context = canvas.getContext("2d");
 
-myButton.addEventListener("click", slide);
-//myButton.addEventListener("click", rotate);
-//myButton.addEventListener("click", scale);
 
-function slide(){
-    let timerId = null;
-    let x = 0;
-    let y = 0;
+/* //DRAW LINES
+context.strokeStyle = "purple"; //determine color of drawn line
+context.lineWidth = 5; //Determine the thickness of the drawn lines
+context.beginPath();
+context.moveTo(250,0);
+context.lineTo(250,250);
+context.moveTo(0,0);
+context.lineTo(250,250);
+context.lineTo(250,500);
+context.moveTo(500,0);
+context.lineTo(250,250);
+context.stroke(); */
 
-    timerId = setInterval(frame, 5);
+/* //DRAW TRIANGLE
+context.strokeStyle = 'blue'; //determine color of drawn line
+context.fillStyle = 'pink'; //determine what color to fill shape
+context.lineWidth = 5; //Determine the thickness of the drawn lines
+context.beginPath();
+context.moveTo(10,490);
+context.lineTo(250,10);
+context.lineTo(490,490);
+context.lineTo(10,490);
+context.stroke();
+context.fill(); */
 
-    function frame(){
-        if(x >= 200 || y >= 200){
-            clearInterval(timerId);
-        }
-        else{
-            x+=1;
-            y+=1;
-            myAnimation.style.top = y + 'px';
-            myAnimation.style.left = x + 'px';
-        }
-    }
-}
-function rotate(){
-    let timerId = null;
-    let degrees = 0;
- 
-    timerId = setInterval(frame, 5);
+/* //DRAW RECTANGLE
+context.fillStyle = 'pink'; 
+context.fillRect(0,0, 250, 250);
+context.strokeStyle = "black";
+context.strokeRect(0, 0, 250, 250);
 
-    function frame(){
-        if(degrees >= 360){
-            clearInterval(timerId);
-        }
-        else{
-            degrees+=1;
-            myAnimation.style.transform = "rotateZ("+degrees+"deg)";
-        }
-    }
-}
-function scale(){
-    let timerId = null;
-    let scaleX = 1;
-    let scaleY = 1;
- 
-    timerId = setInterval(frame, 5);
+context.fillStyle = "red";
+context.fillRect(0, 250, 250, 250);
+context.strokeStyle = "black";
+context.strokeRect(0, 250, 250, 250);
 
-    function frame(){
-        if(scaleX <= 0.1 || scaleY <= 0.1){
-            clearInterval(timerId);
-        }
-        else{
-            scaleX-=0.01;
-            scaleY-=0.01;
-            myAnimation.style.transform = "scale("+scaleX+","+scaleY+")";
-        }
-    }
-}
+context.fillStyle = "green";
+context.fillRect(250, 250, 250, 250);
+context.strokeStyle = "black";
+context.strokeRect(250, 250, 250, 250);
+
+context.fillStyle = "blue";
+context.fillRect(250, 0, 250, 250);
+context.strokeStyle = "black";
+context.strokeRect(250, 0, 250, 250); */
+
+/* //DRAW CIRCLE
+//(x, y, r, sAngle, eAngle, counterclockwise)
+context.fillStyle = "lightblue";
+context.strokeStyle = "darkred";
+context.lineWidth = 5;
+context.beginPath();
+context.arc(0, 0, 100, 5 / 3 * Math.PI, 11 / 6 * Math.PI, true );
+context.stroke();
+context.fill(); */
+
+//DRAW TEXT
+context.font = "50px MV Boli";
+context.fillStyle = "grey";
+context.textAlign = "center";
+context.fillText("YOU WIN!", canvas.width / 2, canvas.height / 2);
