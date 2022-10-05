@@ -35,27 +35,27 @@ img:hover{
 
 .div1{
   background-color: red;
-  left:0px;
-  top:0px;
+  left:35px;
+  top:35px;
   
 }
 
 .div2{
   background-color: yellow;
-  top:0px;
-  right:0px;
+  top:35px;
+  right:35px;
   
 }
 
 .div3{
-  bottom:0px;
-  left:0px;
+  bottom:35px;
+  left:35px;
   background-color: rgb(3, 153, 3);
 }
 
 .div4{
-  bottom:0px;
-  right:0px;
+  bottom:35px;
+  right:35px;
   background-color: rgb(3, 26, 153);
 }
 

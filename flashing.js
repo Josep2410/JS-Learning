@@ -8,24 +8,25 @@ const allDivs = document.querySelectorAll("div");
 const stop = document.querySelector(".stopButton");
 const restart = document.querySelector(".restartButton");
 
-let w = 0;  
+let w = 35;  
 
 //flashing.addEventListener("click", flash);
 flashing.addEventListener("click", slideDownwards);
+flashing.addEventListener("click", spin);
 
 function slideDownwards(){
  
-  timer = setInterval(slideDown, 5);
+  timer = setInterval(slideDown, 20);
  
   
   function slideDown(){
 
-    if(w > 670){
+    if(w > 630){
       clearInterval(timer);
 
     }
     else{
-      w+=1;
+      w+=5;
       div1.style.top = w + 'px';
       div2.style.top = w + 'px';
       div3.style.bottom = w + 'px';
@@ -38,7 +39,7 @@ function slideDownwards(){
     });
 
     restart.addEventListener("click",()=>{
-      w = 0;
+      w = 25;
 
       //reset positions
       div1.style.top = w + 'px';
@@ -76,7 +77,27 @@ function flash(){
   }
 }
 
+function spin(){
+  let timerId = null;
+  let degrees = 0;
 
+  timerId = setInterval(rotate, 5);
+  
+  function rotate(){
+    if (degrees>= 720){
+      clearInterval(timerId);
+    }
+    else{
+      degrees+=1;
+      allDivs.forEach((item) => {
+        item.style.transform = "rotateZ("+degrees+"deg)";
+      }
+      )
+    }
+
+
+  }
+}
 
 
 
