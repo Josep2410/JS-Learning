@@ -1,14 +1,12 @@
-//array.filter() = creates a new array with all elements 
-//                         that pass the test provided by a function
 
-let ages = [18, 16, 21, 17, 19, 90];
-let adults = ages.filter(checkAge);
+//array.reduce() = reduces an array to a single value            
 
-adults.forEach(print);
+let prices = [5, 10, 15, 20, 25, 30];
+let total = prices.reduce(checkOut);
 
-function checkAge(element){
-    return element >= 18;
+console.log(`The total is: $${total}`);
+
+function checkOut(total, element){
+    return total + element;
 }
-function print(element){
-    console.log(element);
-}
+
