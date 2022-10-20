@@ -1,31 +1,29 @@
 
 
-// window = interface used to talk to the web browser
-//                   the DOM is a property of the window
+//array.map() = executes a provided callback function
+//                         once for each array element
+//                         AND creates a new array
 
-const myButton = document.querySelector("#myButton");
+//array.map()
+let numbers = [1, 2, 3, 4, 5];
+let squares = numbers.map(square);
+let cubes = numbers.map(cube);
 
-//console.dir(window);
-//console.log(window.innerWidth);
-//console.log(window.innerHeight);
-//console.log(window.scrollX);
-//console.log(window.scrollY);
+//For Each method
+numbers.forEach((element) =>{
+  console.log( Math.pow(element,2));
+})
 
-//console.log(window.location.href);
-//window.location.href = "https://google.com";
-//console.log(window.location.hostname);
-//console.log(window.location.pathname);
+//numbers.forEach(print);
+//squares.forEach(print);
+//cubes.forEach(print);
 
-//myButton.addEventListener("click", () => window.open("https://google.com"));
-//myButton.addEventListener("click", () => window.close());
-//myButton.addEventListener("click", () => window.print());
-
-//window.alert("Hello!");
-//window.confirm("Press OK to coninue!");
-/*
-let age = window.prompt("Enter your age");
-if(age < 18){
-    window.alert("You must be 18+ to visit this site");
-    window.close();
+function square(element){
+    return Math.pow(element, 2);
 }
-*/
+function cube(element){
+    return Math.pow(element, 3);
+}
+function print(element){
+    console.log(element);
+}
