@@ -1,12 +1,15 @@
+const show = document.querySelector(".on");
+const p = document.querySelector("p");
+const off = document.querySelector(".off");
 
-//array.reduce() = reduces an array to a single value            
+show.addEventListener("click", function(){
+    p.classList.toggle("p-display");
+    off.classList.toggle("off-display");
+    show.classList.toggle("on-display");
+})
 
-let prices = [5, 10, 15, 20, 25, 30];
-let total = prices.reduce(checkOut);
-
-console.log(`The total is: $${total}`);
-
-function checkOut(total, element){
-    return total + element;
-}
-
+off.addEventListener("click", function(){
+    p.classList.toggle("p-display");
+    off.classList.toggle("off-display");
+    show.classList.toggle("on-display");
+})

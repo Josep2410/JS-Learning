@@ -1,4 +1,25 @@
-#myCanvas{
-border: 1px solid black;
+.card{
+  width: 400px;
+  height: auto;
+  border: 1px solid;
+}
 
+p{
+  display: none;
+ }
+
+.off{
+  display: none;
+}
+
+.on-display{
+  display: none;
+}
+
+.p-display {
+  display:block;
+}
+
+.off-display {
+  display:block;
 }
