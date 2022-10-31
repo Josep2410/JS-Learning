@@ -2,24 +2,39 @@
   width: 400px;
   height: auto;
   border: 1px solid;
+  position: relative;
 }
 
-p{
-  display: none;
+.p1, .p2{
+  height: 0;
+  overflow: hidden;
+  transition: 2s;
+  
  }
 
-.off{
-  display: none;
-}
-
-.on-display{
-  display: none;
-}
 
 .p-display {
-  display:block;
+  height: 3.5em;
 }
 
-.off-display {
-  display:block;
+.p-display2 {
+  height: 4.5rem;
+}
+
+.block, .block2{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  top:60px;
+  right:0;
+  transform: rotate(0deg);
+  transition: 2s;
+  cursor: pointer;
+}
+
+.rotate{
+  transform: rotate(90deg);
+  transition: 2s;
+  background-color: red;
 }
